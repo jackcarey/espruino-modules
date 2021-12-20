@@ -2,7 +2,7 @@
 * num: 1-3 for R,G,B
 * val: optional boolean for on or off.
 */
-export function LED(num,LEDval){
+export default function LED(num,LEDval){
   let selected = [LED1,LED2,LED3][num-1];
   if(LEDval==null || LEDVal==undefined){
     let res = digitalRead(selected);
@@ -15,14 +15,14 @@ export function LED(num,LEDval){
 /* Toggle an LED.
 * num: 1-3 for R,G,B
 */
-export function ToggleLED(num){LED(num,!LED(num));}
+export default function ToggleLED(num){LED(num,!LED(num));}
 /* Blink an LED a set number of times
 * num: 1-3 for R,G,B
 * ms: on/off duration
 * reps: number of times to turn on
 *delay: in ms
 */
-export function Blink(num,ms,reps,delay){
+export default function Blink(num,ms,reps,delay){
   num=num?num:1;
   ms = ms?ms:500;
   reps = reps ? reps : 1;
@@ -57,13 +57,13 @@ function _round(val,places){
 /* Return the light sensor value as a percentage
 * places: the number of places to round to
 */
-export function Light(places){
+export default function Light(places){
   return _round(100*Puck.light(),places?places:1);
 }
 
 /* Return the temp sensor value in degrees C.
 * places: the number of places to round to
 */
-export function Temp(places){
+export default function Temp(places){
   return _round(E.getTemperature(),places?places:1);
 }
