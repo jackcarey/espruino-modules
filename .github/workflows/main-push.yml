@@ -2,6 +2,9 @@ name: Minify on Push
 on:
   push:
     branches: [main]
+    paths:
+      - '**.js'
+      - '**.mjs'
 jobs:
   Minify:
     runs-on: ubuntu-latest
