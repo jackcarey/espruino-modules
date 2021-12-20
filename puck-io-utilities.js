@@ -68,4 +68,4 @@ function Temp(places) {
   return _round(E.getTemperature(), places ? places : 1);
 }
 
-export default { LED, ToggleLED, Blink, Light, Temp };
+exports = { LED, ToggleLED, Blink, Light, Temp };
