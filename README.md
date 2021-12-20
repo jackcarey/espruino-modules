@@ -7,6 +7,7 @@ Modules for Espruino
 
 * [Web IDE](https://www.espruino.com/ide/)
 * [Espruino Hardware Reference](http://www.espruino.com/Reference)
+* [Espruino Modules](https://www.espruino.com/Modules)
 * [Puck docs](http://www.espruino.com/Puck.js)
 
 ## Modules
