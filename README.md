@@ -1,8 +1,6 @@
 # espruino-modules
 Modules for Espruino
 
-![Minified Files](https://github.com/jackcarey/espruino-modules/actions/workflows/main-push.yml/badge.svg)
-
 ## Useful Links
 
 * [Web IDE](https://www.espruino.com/ide/)
