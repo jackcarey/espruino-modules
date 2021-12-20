@@ -1,0 +1,27 @@
+name: Minify on Push
+on:
+  push:
+    branches: [main]
+jobs:
+  Minify:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so auto-minify job can access it
+      - uses: actions/checkout@v2.4.0
+        name: Check out repository
+      - name: List files
+        run: ls
+      - name: Auto Minify
+        uses: nizarmah/auto-minify@v2.1
+        with:
+          output: minified
+      - name: List files again
+        run: ls
+      # Auto commits minified files to the repository
+      # Ignore it if you don't want to commit the files to the repository 
+      - name: Auto committing minified files
+        uses: stefanzweifel/git-auto-commit-action@v4.12.0
+        with:
+          commit_message: "Github Action: Auto Minified JS and CSS files"
+          branch: ${{ github.ref }}
+          repository: minified
