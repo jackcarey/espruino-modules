@@ -9,7 +9,9 @@ Modules for Espruino
 * [Espruino Hardware Reference](http://www.espruino.com/Reference)
 * [Puck docs](http://www.espruino.com/Puck.js)
 
-## puck-io-utilities.js
+## Modules
+
+### puck-io-utilities.js
 
 * **LED** - read an LEDs value or turn it on/off
 * **ToggleLED** - toggle an LED on or off.
