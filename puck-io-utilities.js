@@ -27,21 +27,23 @@ function Blink(num, ms, reps, delay) {
   ms = ms ? ms : 500;
   reps = reps ? reps : 1;
   delay = delay ? delay : 0;
-  let thisIntvl;
+  let thisIntvl = null;
   let i = 0;
   function fn() {
     if (i == 0) {
       LED(num, 1);
     } else if (i >= (reps * 2) - 1) {
       LED(num, 0);
-      thisIntvl = UpdateInterval(thisIntvl, -1);
+      if (thisIntvl != null) {
+        clearInterval(thisIntvl, -1);
+      }
     } else {
       ToggleLED(num);
     }
     i++;
   }
   setTimeout(function () {
-    thisIntvl = UpdateInterval(fn, ms);
+    thisIntvl = setInterval(fn, ms);
   }, delay);
 }
 
