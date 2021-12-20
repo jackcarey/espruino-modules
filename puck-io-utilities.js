@@ -2,14 +2,14 @@
 * num: 1-3 for R,G,B
 * val: optional boolean for on or off.
 */
-function LED(num, LEDval) {
+function LED(num, val) {
   let selected = [LED1, LED2, LED3][num - 1];
-  if (LEDval == null || LEDVal == undefined) {
+  if (val == null || val == undefined) {
     let res = digitalRead(selected);
     return res;
   } else {
-    digitalWrite(selected, LEDval ? 1 : 0);
-    return LEDval ? 1 : 0;
+    digitalWrite(selected, val ? 1 : 0);
+    return val ? 1 : 0;
   }
 }
 /* Toggle an LED.
